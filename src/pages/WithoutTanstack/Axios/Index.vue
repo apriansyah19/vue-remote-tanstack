@@ -2,6 +2,7 @@
 import { ref, onMounted, computed } from "vue";
 import { fetchPosts } from "@/api/posts";
 import ErrorSelect from "@/components/select/ErrorSelect.vue";
+import DotSpinner from "@/components/loading/DotSpinner.vue";
 import { resetCallCount } from "@/api/posts";
 
 interface Post {
@@ -66,7 +67,9 @@ onMounted(loadPosts);
     >
       Reload
     </button>
-    <div v-if="isLoading" class="text-lg text-blue-600">Loading posts...</div>
+    <div v-if="isLoading" class="text-lg text-blue-600">
+      <DotSpinner></DotSpinner>
+    </div>
     <div v-else-if="isError" class="text-lg text-red-600">
       {{ errorMessage }}
     </div>

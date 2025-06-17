@@ -3,6 +3,7 @@ import { ref, computed, onMounted, onBeforeMount } from "vue";
 import { usePostsQuery } from "@/composable/usePosts";
 import { fetchPosts, resetCallCount } from "@/api/posts";
 import ErrorSelect from "@/components/select/ErrorSelect.vue";
+import DotSpinner from "@/components/loading/DotSpinner.vue";
 import { useRouter } from "vue-router";
 
 const errCount = ref<number | null>(null);
@@ -39,7 +40,7 @@ const {
       Reload
     </button>
     <div v-if="isLoading || isFetching" class="text-lg text-blue-600">
-      Loading posts.
+      <DotSpinner></DotSpinner>
     </div>
     <div v-else-if="isError" class="text-lg text-red-600">
       {{ error?.message }}
