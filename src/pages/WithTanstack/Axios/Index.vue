@@ -4,11 +4,9 @@ import { usePostsQuery } from "@/composable/usePosts";
 import { fetchPosts, resetCallCount } from "@/api/posts";
 import ErrorSelect from "@/components/select/ErrorSelect.vue";
 import DotSpinner from "@/components/loading/DotSpinner.vue";
-import { useRouter } from "vue-router";
 
 const errCount = ref<number | null>(null);
 const effectiveErrorCount = computed(() => errCount.value ?? 0);
-const router = useRouter();
 
 const {
   data: posts,

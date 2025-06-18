@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center justify-center gap-3 p-4 bg-white rounded-lg shadow-md"
+    class="flex items-center justify-center gap-3 p-4 bg-white rounded-lg shadow-md sticky top-0 z-10"
   >
     <!-- Vue Logo as Image -->
     <img
